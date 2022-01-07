@@ -1,6 +1,6 @@
 # estudando_react
 
-Estou iniciando os estudos com o React, criei esse repositorio para armazenar os projeto de estudo que estou desenvolvendo, que seja bastante ultil em um futuro proximo.
+Estou iniciando os estudos com o React, criei esse repositório para armazenar os projeto de estudo que estou desenvolvendo, que seja bastante útil em um futuro próximo.
 
 
 Neste documento vamos aprender a criar um projeto ReactJS do 0, sem a necessidade de utilizar o **`create-react-app`.**
