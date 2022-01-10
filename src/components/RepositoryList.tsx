@@ -1,6 +1,14 @@
 import { useState, useEffect } from 'react';
 import { RepositoryItem } from "./RepositoryItem";
 import '../styles/repositories.scss';
+
+
+//Aqui eu to tipando o que ta vindo da api, e jogando dentro da interface Repository.
+interface Repository {
+    name: string;
+    description: string;
+    html_url: string;
+}
 //Aqui eu to colocando dentro de uma variavel um nome de repository, assim consigo chamar ele aonde eu quero.
 //const repositoryName = 'Unform';
 //Na tag strong eu uso o { } e dentro dela eu chamo a variavel que criei (repositoryName).
@@ -22,7 +30,9 @@ Nunca de esquece de quando for usar ela, tem que esta entre {}, pois  codigo jav
 
 export function RepositoryList() {
 
-    const [repositories, setRepositories] = useState([]);
+    //Como eu tipei o que ta vindo la da api dentro a interface Repository, aqui no meu estado eu tenho que coloar o useState<Repository[]>([]);
+
+    const [repositories, setRepositories] = useState<Repository[]>([]);
 
     //Aqui eu fiz uma chamada a uma api/url, usando o useEffect
     useEffect(() => {
@@ -41,7 +51,7 @@ export function RepositoryList() {
                 {repositories.map(repository => {
                     //Aqui eu to entrando dentro da variavel repositories e todando um map(percorrer todo o objeto).) 
                     //console.log(repository);
-                    return <RepositoryItem key={repository.id} repository={repository} />
+                    return <RepositoryItem key={repository.name} repository={repository} />
                 })}
 
 

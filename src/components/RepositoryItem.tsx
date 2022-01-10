@@ -4,7 +4,15 @@ Nunca de esquece de quando for usar ela, tem que esta entre {}, pois  codigo jav
 <strong>{props.propiedade_que_pode_ser_usada}</strong>, isso funciona pois o componente RepositoryList e o componente pai, e o RepositoryItem  o filho.
 */
 
-export function RepositoryItem(props) {
+interface RepositoryItemProps {
+    repository: {
+        name: string;
+        description: string;
+        html_url: string;
+    };
+}
+
+export function RepositoryItem(props: RepositoryItemProps) {
     return (
         <li>
             <strong>{props.repository.name}</strong>
